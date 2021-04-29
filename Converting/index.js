@@ -15,6 +15,14 @@ class Converting {
   ];
   constructor(Numbers) {
     for (var i = 0; i < Numbers.length; i++) {
+      if (
+        Numbers[i].toString().length != parseInt(Numbers[i]).toString().length
+      ) {
+        process.stdout.write('Please enter a valid Number.\n');
+        process.exit();
+      }
+    }
+    for (var i = 0; i < Numbers.length; i++) {
       this.Numbers[i] = parseInt(Numbers[i]);
     }
   }
