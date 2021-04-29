@@ -18,6 +18,15 @@ class Converting {
       this.Numbers[i] = parseInt(Numbers[i]);
     }
   }
+  Print() {
+    for (var i = 0; i < this.Numbers.length; i++) {
+      process.stdout.write(this.Convert(this.Numbers[i]));
+      if (i < this.Numbers.length - 1) {
+        process.stdout.write(',');
+      }
+    }
+    process.stdout.write('\n');
+  }
   Convert(Number) {
     let Output = '';
     if (Number.toString().length > 1) {
