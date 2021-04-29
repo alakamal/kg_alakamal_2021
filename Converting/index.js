@@ -14,7 +14,7 @@ class Converting {
     'Nine ',
   ];
   constructor(Numbers) {
-    for (var i = 0; i < Numbers.length; i++) {
+    for (let i = 0; i < Numbers.length; i++) {
       if (
         Numbers[i].toString().length != parseInt(Numbers[i]).toString().length
       ) {
@@ -22,15 +22,15 @@ class Converting {
         process.exit();
       }
     }
-    for (var i = 0; i < Numbers.length; i++) {
+    for (let i = 0; i < Numbers.length; i++) {
       this.Numbers[i] = parseInt(Numbers[i]);
     }
   }
   Print() {
-    for (var i = 0; i < this.Numbers.length; i++) {
+    for (let i = 0; i < this.Numbers.length; i++) {
       this.Validate(this.Numbers[i]);
     }
-    for (var i = 0; i < this.Numbers.length; i++) {
+    for (let i = 0; i < this.Numbers.length; i++) {
       process.stdout.write(this.Convert(this.Numbers[i]));
       if (i < this.Numbers.length - 1) {
         process.stdout.write(',');
@@ -43,13 +43,13 @@ class Converting {
     this.Validate(Number);
     if (Number.toString().length > 1) {
       const arr = Number.toString(10).split('');
-      for (var i = 0; i < arr.length; i++) {
+      for (let i = 0; i < arr.length; i++) {
         Output =
           Output + this.PhoneticEquivalentArray[arr[i]].toString().trim();
       }
     } else Output = Output + this.PhoneticEquivalentArray[Number] + '';
     this.Result = Output.trim().split(',');
-    for (var i = 0; i < this.Result.length; i++) {
+    for (let i = 0; i < this.Result.length; i++) {
       return this.Result[i];
     }
   }
